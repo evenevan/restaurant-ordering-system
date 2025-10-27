@@ -24,5 +24,7 @@ async def main():
 
 
 if __name__ == "__main__":
-    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+    if sys.platform.lower() == "win32" or os.name.lower() == "nt":
+      from asyncio import set_event_loop_policy, WindowsSelectorEventLoopPolicy
+      set_event_loop_policy(WindowsSelectorEventLoopPolicy())
     asyncio.run(main())
