@@ -2,6 +2,8 @@ import asyncio
 import logging
 from backend.mqtt.client import run_async_client
 from backend.config.settings import settings
+import sys
+import os
 
 
 def setup_logging():
