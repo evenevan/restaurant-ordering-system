@@ -18,7 +18,7 @@ class Settings(BaseSettings):
         default='/mqtt', description="The WebSocket path for MQTT connection"
     )
     mqtt_client_id: str = Field(
-        default="efa34-backend-server",
+        default="efa34-backend",
         description="MQTT client identifier, required for persistent sessions",
     )
 
