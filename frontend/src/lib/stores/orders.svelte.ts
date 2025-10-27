@@ -76,8 +76,8 @@ class OrderStore {
 			orderedAt: Date.now(),
 			orderId: crypto.randomUUID(),
 		};
-		this.orders.push(order);
 		await this.publish(MQTT_TOPICS.FOOD_ORDERS_NEW, JSON.stringify(order));
+		this.orders.push(order);
 	}
 
 	async disconnect() {

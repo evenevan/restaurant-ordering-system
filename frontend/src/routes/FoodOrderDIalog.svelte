@@ -9,17 +9,20 @@ import { toast } from "svelte-sonner";
 const { tableNumber } = $props();
 let foodOrderName = $state("");
 let isFoodOrderDialogOpen = $state(false);
+let isLoading = $state(false);
 
 const createOrder = async (e: SubmitEvent) => {
 	try {
 		e.preventDefault();
+    isLoading = true;
 		await orderStore.orderFood(tableNumber, foodOrderName);
+    isLoading = false;
 		toast.success("Order placed successfully!");
 	} catch (error) {
-		toast.error("Failed to place order.");
+    toast.error("Failed to place order.");
 	} finally {
-		foodOrderName = "";
 		isFoodOrderDialogOpen = false;
+		foodOrderName = "";
 	}
 };
 </script>
@@ -42,7 +45,7 @@ const createOrder = async (e: SubmitEvent) => {
                 />
             </div>
             <Dialog.Footer>
-                <Button type="submit" disabled={!foodOrderName}>Order</Button>
+                <Button type="submit" disabled={!foodOrderName || isLoading}>Order</Button>
             </Dialog.Footer>
         </form>
     </Dialog.Content>
