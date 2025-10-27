@@ -1,21 +1,6 @@
 # Restaurant Ordering System
 
-## Deployment
-
-### Backend
-
-The backend can be containerized via the included Dockerfile. For the live demo, an instance of the container is running on my server. As the backend connects to the broker, the backend is not directly exposed via any ports.
-
-### Frontend
-
-The frontend can be built as a static site with:
-
-```
-cd frontend
-npm run build
-```
-
-An instance of the frontend is live on [https://osensa.evanfeng.dev/](https://osensa.evanfeng.dev/) via Cloudflare Pages.
+An instance is live on [https://osensa.evanfeng.dev/](https://osensa.evanfeng.dev/).
 
 ## Local Setup
 
@@ -46,6 +31,23 @@ From within `frontend`:
 npm i
 npm run dev
 ```
+
+## Deployment
+
+### Backend
+
+The backend can be containerized via the included Dockerfile. For the live demo, an instance of the container is running on my server. As the backend connects to the broker, the backend is not directly exposed via any ports.
+
+### Frontend
+
+The frontend can be built as a static site with:
+
+```
+cd frontend
+npm run build
+```
+
+The live demo is hosted through Cloudflare Pages.
 
 ## Flow
 
@@ -87,4 +89,4 @@ The frontend contains a (basic) e2e testing suite through Cypress that ensures o
 
 ## Security
 
-MQTT is configured for TLS on both connections to the MQTT broker. Payloads from the broker are validated on both ends to assure conformance to the schema. While the demo uses a widely used MQTT test server, a real production deployment would have a more secure choice particularly with regards to authentication.
+MQTT is configured for TLS on both connections to the MQTT broker. Payloads from the broker are validated on both ends to assure conformance to the schema.
