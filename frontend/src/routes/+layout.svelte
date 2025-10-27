@@ -1,5 +1,5 @@
 <script lang="ts">
-import { onDestroy, onMount } from "svelte";
+import { onMount } from "svelte";
 import { Toaster } from "$lib/components/ui/sonner";
 import { ModeWatcher } from "mode-watcher";
 import "../app.css";
@@ -19,10 +19,6 @@ onMount(async () => {
 		isLoading = false;
 	}
 });
-
-onDestroy(() => {
-	orderStore.disconnect();
-});
 </script>
 
 <div class="flex flex-col min-h-screen bg-background text-foreground">
@@ -32,7 +28,12 @@ onDestroy(() => {
         {:else if errorMessage}
             <div>
                 <p>{errorMessage}</p>
-                <button onclick={() => window.location.reload()} class="underline">Retry</button>
+                <button
+                    onclick={() => window.location.reload()}
+                    class="underline"
+                >
+                    Retry
+                </button>
             </div>
         {:else}
             {@render children()}

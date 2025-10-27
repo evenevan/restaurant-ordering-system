@@ -52,7 +52,9 @@ class OrderStore {
 			if (
 				typeof parsed.tableNumber === "number" &&
 				typeof parsed.foodName === "string" &&
-				typeof parsed.orderedAt === "number"
+				typeof parsed.orderedAt === "number" &&
+				typeof parsed.orderId === "string" &&
+				typeof parsed.completedAt === "number"
 			) {
 				return parsed as Order;
 			}

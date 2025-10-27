@@ -11,7 +11,7 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "biome format --write",
-    "cy:open": "cypress open"
+		"cy:open": "cypress open"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.3.1",

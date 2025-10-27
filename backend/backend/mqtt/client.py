@@ -13,7 +13,6 @@ async def run_async_client():
         try:
             await use_client()
         except MqttError as e:
-            logger.exception(e)
             logger.error(
                 "MQTT connection error: %s. Reconnecting in %d seconds...",
                 e,
