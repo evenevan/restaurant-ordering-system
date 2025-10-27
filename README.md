@@ -23,7 +23,7 @@ Note: although this was written on Windows, this should work for macOS and Linux
 
 ### Env Configuration
 
-On the frontend and backend, copy over .env.example into .env. By default, `test.mosquitto.org` is used as the broker for MQTT over Websocket though other brokers should work too.
+On the frontend and backend, copy over .env.example into .env. By default, `test.mosquitto.org` is used as the broker for MQTT over Websocket though other brokers work too.
 
 ### Backend
 
