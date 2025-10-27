@@ -1,6 +1,23 @@
 # Restaurant Ordering System
 
-## Setup
+## Deployment
+
+### Backend
+
+The backend can be containerized via the included Dockerfile. For the live demo, an instance of the container is running on my server. As the backend connects to the broker, the backend is not directly exposed via any ports.
+
+### Frontend
+
+The frontend can be built as a static site with:
+
+```
+cd frontend
+npm run build
+```
+
+An instance of the frontend is live on [https://osensa.evanfeng.dev/](https://osensa.evanfeng.dev/) via Cloudflare Pages.
+
+## Local Setup
 
 Note: although this was written on Windows, this should work for macOS and Linux as well.
 
@@ -69,24 +86,6 @@ The frontend contains a (basic) e2e testing suite through Cypress that ensures o
 2. Select E2E Testing
 3. Select any of the browsers available
 4. Click on the `order.cy.ts` test
-
-## Deployment
-
-### Backend
-
-The backend can be containerized via the included Dockerfile. For the live demo, an instance of the container is running on my server. As the backend connects to the broker, the backend is not directly exposed via any ports.
-
-### Frontend
-
-The frontend can be built as a static site with:
-
-```
-cd frontend
-npm run build
-```
-
-An instance of the frontend is live on [https://osensa.evanfeng.dev/](https://osensa.evanfeng.dev/) via Cloudflare Pages.
-
 
 ## Security
 
