@@ -25,7 +25,7 @@ poetry run python -m backend
 
 The frontend uses SvelteKit along with `shadcn` and `TailwindCSS`.
 
-From within `frontend`:
+With a recent Node.js install (LTS is known working) and `npm`, from within `frontend`, run:
 
 ```
 npm i
