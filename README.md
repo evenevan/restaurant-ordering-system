@@ -59,7 +59,7 @@ Tables can order at the same time, but the chef in the back can only prepare one
 
 ## MQTT Overview
 
-When an order is made, an event is sent to the backend containing this schema:
+When an order is made, an event is sent to the backend containing this schema to the topic `efa34/food/orders/new`:
 
 ```ts
 interface Order {
@@ -70,7 +70,7 @@ interface Order {
 }
 ```
 
-The backend will process the event and returns an object that is the same as the Order except for the addition of a `completedAt` field.
+The backend will process the event and give the completed order via ` efa34/food/orders/complete`, which has the same schema as Order except for the addition of a `completedAt` field.
 
 ## Testing
 
