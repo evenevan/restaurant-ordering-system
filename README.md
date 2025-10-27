@@ -45,7 +45,6 @@ From within `frontend`:
 ```
 npm i
 npm run dev
-
 ```
 
 ## Flow
@@ -77,7 +76,6 @@ The backend has `pytest` for unit level testing. These can be run by first navig
 
 ```
 poetry run pytest
-
 ```
 
 The frontend contains a (basic) e2e testing suite through Cypress that ensures ordering food works. Before running this, you need to have the frontend and backend running locally. The frontend should be running on `http://localhost:3000`. The Cypress tests can be run with the following:
