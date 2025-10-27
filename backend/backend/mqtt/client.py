@@ -37,17 +37,13 @@ async def use_client():
     async with Client(
         settings.mqtt_broker_url,
         port=settings.mqtt_broker_port,
-        identifier=settings.mqtt_client_id,
         websocket_path=settings.mqtt_broker_path,
         clean_session=True,
         transport='websockets',
         tls_params=TLSParameters(),
         keepalive=60,
     ) as client:
-        logger.info(
-            "MQTT client connected successfully (Client ID: %s)",
-            settings.mqtt_client_id,
-        )
+        logger.info("MQTT client connected successfully")
         await client.subscribe(MQTTTopics.FOOD_ORDERS_NEW)
         logger.info("Subscribed to topic: %s", MQTTTopics.FOOD_ORDERS_NEW)
 

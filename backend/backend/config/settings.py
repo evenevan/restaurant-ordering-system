@@ -17,10 +17,6 @@ class Settings(BaseSettings):
     mqtt_broker_path: str = Field(
         default='/mqtt', description="The WebSocket path for MQTT connection"
     )
-    mqtt_client_id: str = Field(
-        default="efa34-backend",
-        description="MQTT client identifier, required for persistent sessions",
-    )
 
     log_level: str = Field(default="INFO", description="Logging level")
     log_format: str = Field(
